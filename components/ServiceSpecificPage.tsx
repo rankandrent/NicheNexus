@@ -67,9 +67,20 @@ export default function ServiceSpecificPage({ city, state, stateCode, service, r
                     </div>
 
                     {/* Placeholder for Service Image */}
+                    {/* Service Image */}
                     <div className="relative hidden lg:block">
-                        <div className="aspect-video bg-white/5 rounded-2xl border border-white/10 flex items-center justify-center">
-                            <span className="text-6xl">{service.icon}</span>
+                        <div className="relative w-full aspect-square max-w-lg mx-auto">
+                            {/* Decorative blob behind image */}
+                            <div className="absolute inset-0 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+
+                            <Image
+                                src="/Premium Gutter Installation-.png"
+                                alt={`${service.title} in ${formattedCity}`}
+                                width={600}
+                                height={600}
+                                className="relative z-10 object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500"
+                                priority
+                            />
                         </div>
                     </div>
                 </div>

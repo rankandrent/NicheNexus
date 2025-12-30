@@ -20,7 +20,9 @@ export default function RelatedServices({ city, state }: RelatedServicesProps) {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {Object.values(servicesData).map((service, index) => {
                         const citySlug = city?.toLowerCase().replace(/ /g, '-')
-                        const linkHref = city && state ? `/${state}/${citySlug}/${service.slug}` : '/contact'
+                        // If we are on a city page, link to service page. Otherwise link to phone.
+                        const isCityContext = city && state
+                        const linkHref = isCityContext ? `/${state}/${citySlug}/${service.slug}` : 'tel:+18588985338'
 
                         return (
                             <div key={index} className="flex flex-col h-full bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:border-blue-200 hover:shadow-lg transition-all duration-300">
@@ -29,9 +31,11 @@ export default function RelatedServices({ city, state }: RelatedServicesProps) {
                                         {service.icon}
                                     </div>
                                     <h3 className="font-bold text-slate-800 text-lg leading-tight hover:text-blue-600 transition-colors">
-                                        <Link href={linkHref}>
-                                            {service.title}
-                                        </Link>
+                                        {isCityContext ? (
+                                            <Link href={linkHref}>{service.title}</Link>
+                                        ) : (
+                                            <a href={linkHref}>{service.title}</a>
+                                        )}
                                     </h3>
                                 </div>
 
@@ -39,9 +43,15 @@ export default function RelatedServices({ city, state }: RelatedServicesProps) {
                                     {city && state ? service.description(city, state) : `Professional ${service.title.toLowerCase()} services.`}
                                 </p>
 
-                                <Link href={linkHref} className="mt-auto w-full block text-center bg-white border border-blue-200 text-blue-600 font-semibold py-2.5 rounded-xl hover:bg-blue-600 hover:text-white transition-colors">
-                                    {city && state ? 'Learn More' : 'Get Quote'}
-                                </Link>
+                                {isCityContext ? (
+                                    <Link href={linkHref} className="mt-auto w-full block text-center bg-white border border-blue-200 text-blue-600 font-semibold py-2.5 rounded-xl hover:bg-blue-600 hover:text-white transition-colors">
+                                        Learn More
+                                    </Link>
+                                ) : (
+                                    <a href={linkHref} className="mt-auto w-full block text-center bg-white border border-blue-200 text-blue-600 font-semibold py-2.5 rounded-xl hover:bg-blue-600 hover:text-white transition-colors">
+                                        Call Now
+                                    </a>
+                                )}
                             </div>
                         )
                     })}

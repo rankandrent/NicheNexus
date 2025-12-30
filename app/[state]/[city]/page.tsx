@@ -16,22 +16,32 @@ interface PageProps {
     }>
 }
 
+import { getMetaTitle } from '@/lib/state-meta-patterns'
+
+// ... existing imports ...
+
 export async function generateMetadata(props: PageProps): Promise<Metadata> {
     const params = await props.params
     const { state, city } = params
 
+    // Fetch data for accurate State Name
+    const cityData = await getCityData(state, city)
+
     // Format City/State for display
-    const formattedCity = city.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())
-    const formattedState = state.toUpperCase()
+    const formattedCity = cityData?.city || city.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())
+    const stateCode = cityData?.state_id || state.toUpperCase()
+    const stateName = cityData?.state_name || stateCode
+
+    const metaTitle = getMetaTitle(formattedCity, stateCode, stateName)
 
     return {
-        title: `Gutter Installation, Cleaning & Repair ${formattedCity}, ${formattedState} Near me`,
-        description: `Looking for top-rated gutter installers in ${formattedCity}, ${formattedState}? We provide seamless gutter installation, guards, and cleaning. Get a fast free quote today!`,
+        title: metaTitle,
+        description: `Looking for top-rated gutter installers in ${formattedCity}, ${stateCode}? We provide seamless gutter installation, guards, and cleaning. Get a fast free quote today!`,
         alternates: {
             canonical: `/${state}/${city}`
         },
         openGraph: {
-            title: `Best Gutter Installation in ${formattedCity}, ${formattedState}`,
+            title: `Best Gutter Installation in ${formattedCity}, ${stateCode}`,
             description: `We are the #1 rated gutter experts in ${formattedCity}. Call now for seamless gutters, guards, and repairs. Lifetime warranty included.`,
             url: `https://gutterpro.com/${state}/${city}`,
         }

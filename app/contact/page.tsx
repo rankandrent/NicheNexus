@@ -44,14 +44,14 @@ export default function ContactPage() {
                             <div>
                                 <h3 className="text-xl font-bold mb-2">Email Support</h3>
                                 <p className="text-slate-600 mb-1">For non-urgent inquiries:</p>
-                                <a href="mailto:support@gutterpro.com" className="text-blue-600 font-semibold hover:underline">support@gutterpro.com</a>
+                                <a href="mailto:support@usgutterinstallation.com" className="text-blue-600 font-semibold hover:underline">support@usgutterinstallation.com</a>
                             </div>
 
                             <div>
                                 <h3 className="text-xl font-bold mb-2">Corporate Office</h3>
                                 <p className="text-slate-600">
-                                    123 GutterPro Way<br />
-                                    San Diego, CA 92101<br />
+                                    2233 Road Druid<br />
+                                    Clearwater, FL<br />
                                     United States
                                 </p>
                             </div>
