@@ -62,7 +62,7 @@ export default function ServicePage({ city, state, stateCode, zipCodes, relatedC
                             #1 Rated in {stateCode.toUpperCase()}
                         </div>
                         <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-8 leading-tight tracking-tight">
-                            Premium Gutter Installation in <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">{formattedCity}</span>
+                            Gutter Installation, Cleaning & Repair in <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">{formattedCity}, {stateCode.toUpperCase()}</span>
                         </h1>
                         <div className="text-xl md:text-2xl text-slate-300 mb-10 font-light space-y-4">
                             <p dangerouslySetInnerHTML={{ __html: content.intro.replace(/\*\*(.*?)\*\*/g, '<span class="text-white font-medium">$1</span>') }} />
@@ -139,7 +139,7 @@ export default function ServicePage({ city, state, stateCode, zipCodes, relatedC
             />
 
             <CoverageStats />
-            <CoverageStats />
+
             <RelatedServices city={formattedCity} state={stateCode} />
 
             {/* Features Grid */}

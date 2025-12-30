@@ -8,7 +8,7 @@ export default function Footer() {
             <div className="max-w-7xl mx-auto px-6 text-center md:text-left">
                 <div className="grid md:grid-cols-4 gap-8 mb-8">
                     <div>
-                        <h4 className="text-white font-bold text-lg mb-4">GutterPro</h4>
+                        <h4 className="text-white font-bold text-lg mb-4">US Gutter Installation</h4>
                         <p className="text-sm">America&apos;s trusted gutter installation partner. Connecting homeowners with local experts nationwide.</p>
                     </div>
                     <div>
@@ -37,7 +37,7 @@ export default function Footer() {
                     </div>
                 </div>
                 <div className="border-t border-slate-800 pt-8 text-center text-sm">
-                    &copy; {currentYear} GutterPro Nationwide Services. All rights reserved.
+                    &copy; {currentYear} US Gutter Installation. All rights reserved.
                 </div>
             </div>
         </footer>

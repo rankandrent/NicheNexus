@@ -25,7 +25,7 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
     const formattedState = state.toUpperCase()
 
     return {
-        title: `Best Gutter Installation in ${formattedCity}, ${formattedState} | Free Quote`,
+        title: `Gutter Installation, Cleaning & Repair ${formattedCity}, ${formattedState} Near me`,
         description: `Looking for top-rated gutter installers in ${formattedCity}, ${formattedState}? We provide seamless gutter installation, guards, and cleaning. Get a fast free quote today!`,
         alternates: {
             canonical: `/${state}/${city}`

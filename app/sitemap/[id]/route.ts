@@ -13,7 +13,7 @@ export async function GET(
     // 1. Handle Static Sitemap
     if (id === 'static.xml') {
         const staticRoutes = [
-            '',
+            '', // Home
             '/about',
             '/contact',
             '/privacy',

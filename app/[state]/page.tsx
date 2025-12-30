@@ -35,7 +35,7 @@ export async function generateMetadata(props: StatePageProps): Promise<Metadata>
     const params = await props.params
     const stateCode = params.state.toUpperCase()
     return {
-        title: `Gutter Installation in ${stateCode} | All Cities`,
+        title: `Gutter Installation ${stateCode} | US Gutter Installation`,
         description: `Find top-rated gutter installation services in ${stateCode}. Select your city to get a free quote today.`,
     }
 }

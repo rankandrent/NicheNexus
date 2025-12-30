@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://usgutterinstallation.com'),
   title: {
-    default: "US Gutter Installation | Premier Gutter Services",
-    template: "%s | US Gutter Installation"
+    default: "Gutter Installation Services | US Gutter Installation",
+    template: "%s"
   },
   description: "America's #1 rated gutter installation provided. Seamless gutters, guards, cleaning, and repair. Find your local expert today.",
   openGraph: {
@@ -27,6 +27,9 @@ export const metadata: Metadata = {
   icons: {
     icon: '/favicon.svg',
   },
+  verification: {
+    google: "k2L90XxpR-_CGNrjycPWVoRqgU8j0bhMr2VGg8enMy0"
+  }
 };
 
 export default function RootLayout({
