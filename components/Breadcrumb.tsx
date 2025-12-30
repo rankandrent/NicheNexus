@@ -22,7 +22,7 @@ export default function Breadcrumb({ items }: BreadcrumbProps) {
             "@type": "ListItem",
             "position": index + 1,
             "name": item.label,
-            "item": `https://gutterpro.com${item.href}` // Replace with actual domain in production
+            "item": `https://usgutterinstallation.com${item.href}` // Replace with actual domain in production
         }))
     }
 

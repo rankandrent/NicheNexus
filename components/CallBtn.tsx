@@ -6,11 +6,13 @@ export const PHONE_HREF = "tel:+18588985338"
 export function CallBtn({
     className = "",
     variant = "primary",
-    label = "Call Now"
+    label = "Call Now",
+    showNumber = false
 }: {
     className?: string,
     variant?: "primary" | "secondary" | "outline",
-    label?: string
+    label?: string,
+    showNumber?: boolean
 }) {
     const baseStyles = "inline-flex items-center justify-center font-bold transition-all duration-300 transform active:scale-95"
 
@@ -26,7 +28,7 @@ export function CallBtn({
             className={`${baseStyles} ${variants[variant]} ${className}`}
         >
             <span className="mr-2 text-xl">📞</span>
-            <span>{label}</span>
+            <span>{label} {showNumber && <span className="ml-1 font-mono tracking-tighter opacity-90 block sm:inline"> | {PHONE_NUMBER}</span>}</span>
         </a>
     )
 }

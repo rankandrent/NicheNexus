@@ -34,7 +34,7 @@ export default function ServicePage({ city, state, stateCode, zipCodes, relatedC
             <nav className="fixed w-full z-50 transition-all duration-300 bg-white/80 backdrop-blur-md border-b border-white/20 shadow-sm">
                 <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
                     <Link href="/" className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-700 to-cyan-500">
-                        GutterPro
+                        US Gutter Installation
                     </Link>
                     <div className="flex items-center gap-6">
                         <div className="hidden md:flex gap-6 text-sm font-medium text-slate-600">
@@ -69,10 +69,10 @@ export default function ServicePage({ city, state, stateCode, zipCodes, relatedC
                         </div>
 
                         <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
-                            <CallBtn className="py-4 px-10 text-lg w-full sm:w-auto transform hover:scale-105" label="Call Now for Fast Quote" />
-                            <button className="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white font-semibold py-4 px-10 rounded-full text-lg transition-all w-full sm:w-auto">
-                                View Services
-                            </button>
+                            <CallBtn className="py-4 px-10 text-lg w-full sm:w-auto transform hover:scale-105" label="Call Now" showNumber={true} />
+                            <Link href="#cities" className="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white font-semibold py-4 px-10 rounded-full text-lg transition-all w-full sm:w-auto text-center">
+                                View Locations
+                            </Link>
                         </div>
                     </div>
 

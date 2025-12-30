@@ -60,7 +60,7 @@ export default async function StatePage(props: StatePageProps) {
                 <nav className="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-white/80 backdrop-blur-md border-b border-white/20 shadow-sm">
                     <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
                         <Link href="/" className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-700 to-cyan-500">
-                            GutterPro
+                            US Gutter Installation
                         </Link>
                         <div className="flex items-center gap-6">
                             <div className="hidden md:flex gap-6 text-sm font-medium text-slate-600">

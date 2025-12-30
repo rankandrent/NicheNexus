@@ -13,16 +13,16 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://gutterpro.com'), // Replace with actual domain
+  metadataBase: new URL('https://usgutterinstallation.com'),
   title: {
-    default: "GutterPro | Premier Gutter Installation & Repair Services",
-    template: "%s | GutterPro"
+    default: "US Gutter Installation | Premier Gutter Services",
+    template: "%s | US Gutter Installation"
   },
   description: "America's #1 rated gutter installation provided. Seamless gutters, guards, cleaning, and repair. Find your local expert today.",
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    siteName: 'GutterPro',
+    siteName: 'US Gutter Installation',
   },
   icons: {
     icon: '/favicon.svg',

@@ -28,8 +28,10 @@ export default function RelatedServices({ city, state }: RelatedServicesProps) {
                                     <div className="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center flex-shrink-0 text-sm">
                                         {service.icon}
                                     </div>
-                                    <h3 className="font-bold text-slate-800 text-lg leading-tight">
-                                        {service.title}
+                                    <h3 className="font-bold text-slate-800 text-lg leading-tight hover:text-blue-600 transition-colors">
+                                        <Link href={linkHref}>
+                                            {service.title}
+                                        </Link>
                                     </h3>
                                 </div>
 
