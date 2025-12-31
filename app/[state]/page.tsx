@@ -34,15 +34,25 @@ async function getStateData(stateCode: string) {
 export async function generateMetadata(props: StatePageProps): Promise<Metadata> {
     const params = await props.params
     const stateCode = params.state.toUpperCase()
+    // Fetch state name optimization (limit 1)
+    const { data: cityData } = await supabase
+        .from('usa city name')
+        .select('state_name')
+        .ilike('state_id', stateCode)
+        .limit(1)
+        .single()
+
+    const stateName = cityData?.state_name || stateCode
+
     return {
-        title: `Gutter Installation ${stateCode} | US Gutter Installation`,
-        description: `Find top-rated gutter installation services in ${stateCode}. Select your city to get a free quote today.`,
+        title: `Gutter Installation in ${stateName}`,
+        description: `Find top-rated gutter installation services in ${stateName}. Select your city to get a free quote today.`,
         alternates: {
             canonical: `/${stateCode}`
         },
         openGraph: {
-            title: `Gutter Installation in ${stateCode} | Local Experts`,
-            description: `Connect with trusted gutter installers in ${stateCode}. Seamless gutters, guards, and repairs. Get a free quote now.`,
+            title: `Gutter Installation in ${stateName} | Local Experts`,
+            description: `Connect with trusted gutter installers in ${stateName}. Seamless gutters, guards, and repairs. Get a free quote now.`,
             url: `https://usgutterinstallation.com/${stateCode}`,
             type: 'website'
         }
