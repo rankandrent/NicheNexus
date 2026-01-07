@@ -46,11 +46,7 @@
   to = "/"
   status = 301
 
-# Handle trailing slashes consistently
-[[redirects]]
-  from = "/*/"
-  to = "/:splat"
-  status = 301
+
 
 # Handle .html extensions that bots might try
 [[redirects]]
