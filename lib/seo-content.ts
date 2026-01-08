@@ -173,7 +173,11 @@ export function getSEOContent(city: string, state: string, stateCode?: string): 
             cost: `In ${city}, seamless aluminum gutter installation typically costs $6-12 per linear foot, while copper ranges from $25-40. A standard 150-200 linear foot home averages $1,200-$2,400 for aluminum or $4,500-$8,000 for copper.`,
             timeline: `Our ${city} crews complete most residential gutter installations in a single 4-6 hour day. Complex rooflines or full copper systems may require two days.`,
             warranty: `Every installation in ${city} includes our industry-leading warranty: lifetime coverage on materials against manufacturing defects, plus 10 years on labor and workmanship.`,
-            permit: `Most residential gutter replacements in ${city} don't require permits, but we verify local ${state} building codes for every project and pull permits when needed.`
+            permit: `Most residential gutter replacements in ${city} don't require permits, but we verify local ${state} building codes for every project and pull permits when needed.`,
+            bestGuard: `For ${state} weather conditions, we recommend micro-mesh gutter guards that handle ${getClimateContent(code)}. Our ${city} customers love the 50-micron stainless steel mesh that blocks pine needles, roof grit, and debris while allowing maximum water flow.`,
+            emergency: `Yes! We offer emergency gutter repair near me in ${city} with 24-48 hour response times. Whether you have active leaks, storm damage, or gutters about to fall, our ${state} crews are ready to help—call now for same-day assessment.`,
+            cleaningFrequency: `In ${city}, ${state}, we recommend gutter cleaning 2-3 times per year due to ${getClimateContent(code)}. However, with our professional gutter guard installation, you can eliminate cleaning entirely and enjoy clog-free gutters for life.`,
+            soffitFascia: `Absolutely! Our ${city} crews specialize in soffit and fascia repair near me services. We replace rotted fascia boards, install aluminum fascia wrap, and repair damaged soffits—often completing the work alongside your gutter installation for a seamless finish.`
         }
     }
 }

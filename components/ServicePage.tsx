@@ -249,17 +249,21 @@ export default function ServicePage({ city, state, stateCode, zipCodes, relatedC
             {relatedCities && relatedCities.length > 0 && (
                 <section className="py-16 px-6 bg-slate-50 border-b border-slate-200">
                     <div className="max-w-6xl mx-auto">
-                        <h2 className="text-2xl font-bold text-slate-900 mb-8 text-center">
-                            Other Top Locations in {stateCode.toUpperCase()}
+                        <h2 className="text-2xl font-bold text-slate-900 mb-4 text-center">
+                            Gutter Installation Near Me in Other {stateCode.toUpperCase()} Cities
                         </h2>
+                        <p className="text-slate-600 text-center mb-8 max-w-2xl mx-auto">
+                            Looking for <strong>gutter contractors near me</strong> outside {formattedCity}? We serve these nearby {stateCode.toUpperCase()} communities with the same quality service.
+                        </p>
                         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
                             {relatedCities.map((cityData, i) => (
                                 <Link
                                     key={i}
                                     href={`/${cityData.state_id}/${cityData.city.toLowerCase().replace(/ /g, '-')}`}
-                                    className="block p-3 bg-white rounded-lg shadow-sm border border-slate-200 hover:border-blue-400 hover:shadow-md transition-all text-center text-slate-700 font-medium hover:text-blue-600 truncate"
-                                    title={cityData.city}
+                                    className="block p-3 bg-white rounded-lg shadow-sm border border-slate-200 hover:border-blue-400 hover:shadow-md transition-all text-center text-slate-700 font-medium hover:text-blue-600"
+                                    title={`Gutter Installation in ${cityData.city}, ${cityData.state_id}`}
                                 >
+                                    <span className="block text-xs text-slate-400 mb-1">Gutter Services</span>
                                     {cityData.city}
                                 </Link>
                             ))}
@@ -349,6 +353,96 @@ export default function ServicePage({ city, state, stateCode, zipCodes, relatedC
                 </div>
             </section>
 
+            {/* Local Expertise Section - Added for SEO */}
+            <section className="py-20 px-6 bg-gradient-to-br from-blue-50 to-cyan-50">
+                <div className="max-w-6xl mx-auto">
+                    <div className="text-center mb-12">
+                        <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                            Local Gutter Experts Serving {formattedCity} & Surrounding Areas
+                        </h2>
+                        <p className="text-lg text-slate-600 max-w-3xl mx-auto">
+                            When you search for <strong>gutter installation near me in {formattedCity}</strong>, you deserve contractors who truly understand your local area. Our {stateCode.toUpperCase()}-based crews have served thousands of homeowners across {formattedCity} and the surrounding communities.
+                        </p>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-8 mb-12">
+                        {/* Local Service Area */}
+                        <div className="bg-white p-8 rounded-2xl shadow-lg border border-slate-100">
+                            <h3 className="text-2xl font-bold text-slate-900 mb-4">
+                                🏠 Neighborhoods We Serve in {formattedCity}
+                            </h3>
+                            <p className="text-slate-600 mb-4">
+                                Our <strong>gutter contractors near me in {formattedCity}</strong> cover all residential and commercial areas including downtown {formattedCity}, historic districts, new developments, and rural properties. Whether you live in an established neighborhood or a newly built subdivision, we bring our mobile gutter fabrication equipment directly to your driveway.
+                            </p>
+                            <p className="text-slate-600">
+                                We also serve surrounding {stateCode.toUpperCase()} communities within a 30-mile radius. Looking for <strong>seamless gutters near me</strong> outside city limits? Our crews regularly travel to nearby towns to provide the same quality service at competitive rates.
+                            </p>
+                        </div>
+
+                        {/* Climate Expertise */}
+                        <div className="bg-white p-8 rounded-2xl shadow-lg border border-slate-100">
+                            <h3 className="text-2xl font-bold text-slate-900 mb-4">
+                                🌤️ {stateCode.toUpperCase()} Climate-Ready Gutter Systems
+                            </h3>
+                            <p className="text-slate-600 mb-4">
+                                {stateCode.toUpperCase()} homeowners face unique weather challenges: {content.climateConsiderations}. That's why our <strong>gutter installation near me</strong> specialists design systems specifically engineered for local conditions—not generic one-size-fits-all solutions.
+                            </p>
+                            <p className="text-slate-600">
+                                We recommend <strong>gutter guards near me</strong> installations that handle {stateCode.toUpperCase()}'s debris types, from leaves and pine needles to roof shingle grit. Our micro-mesh systems prevent clogs year-round, eliminating the need for dangerous ladder cleaning.
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* Additional Local Content */}
+                    <div className="bg-white p-8 rounded-2xl shadow-lg border border-slate-100 mb-8">
+                        <h3 className="text-2xl font-bold text-slate-900 mb-4">
+                            Why {formattedCity} Homeowners Choose Us for <span className="text-blue-600">Gutter Services Near Me</span>
+                        </h3>
+                        <div className="grid md:grid-cols-3 gap-6">
+                            <div>
+                                <h4 className="font-bold text-slate-800 mb-2">🔧 Full-Service Solutions</h4>
+                                <p className="text-slate-600 text-sm">
+                                    From <strong>seamless gutter installation near me</strong> to <strong>gutter repair near me</strong>, we handle everything: gutter guards, downspout extensions, soffit and fascia repair, and emergency storm damage restoration.
+                                </p>
+                            </div>
+                            <div>
+                                <h4 className="font-bold text-slate-800 mb-2">⭐ Trusted Local Reputation</h4>
+                                <p className="text-slate-600 text-sm">
+                                    With thousands of completed projects across {stateCode.toUpperCase()}, we're the <strong>gutter company near me</strong> that {formattedCity} residents recommend to neighbors and friends. Check our verified 5-star reviews online.
+                                </p>
+                            </div>
+                            <div>
+                                <h4 className="font-bold text-slate-800 mb-2">💰 Transparent Local Pricing</h4>
+                                <p className="text-slate-600 text-sm">
+                                    When you search for <strong>gutter installation near me cost</strong>, you'll find our {formattedCity} pricing is competitive and straightforward—no hidden fees, no upsells, just honest quotes with lifetime warranties included.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Service Links with Strong Anchor Text */}
+                    <div className="text-center">
+                        <p className="text-slate-600 mb-4">
+                            Ready to get started with a <strong>gutter installation near me in {formattedCity}</strong>? Contact our local team today for a free, no-obligation estimate on any of our services.
+                        </p>
+                        <div className="flex flex-wrap gap-3 justify-center">
+                            <Link href={`/${stateCode.toLowerCase()}/${city}/seamless-gutter-installation`} className="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium hover:bg-blue-200 transition-colors">
+                                Seamless Gutters in {formattedCity}
+                            </Link>
+                            <Link href={`/${stateCode.toLowerCase()}/${city}/gutter-guards-leaf-protection`} className="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium hover:bg-blue-200 transition-colors">
+                                Gutter Guards Near Me
+                            </Link>
+                            <Link href={`/${stateCode.toLowerCase()}/${city}/soffit-fascia-repair`} className="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium hover:bg-blue-200 transition-colors">
+                                Soffit & Fascia Repair
+                            </Link>
+                            <Link href={`/${stateCode.toLowerCase()}/${city}/emergency-gutter-repair`} className="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium hover:bg-blue-200 transition-colors">
+                                Emergency Repairs
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* FAQ Section */}
             <script
                 type="application/ld+json"
@@ -359,7 +453,7 @@ export default function ServicePage({ city, state, stateCode, zipCodes, relatedC
                         "mainEntity": [
                             {
                                 "@type": "Question",
-                                "name": "How much does gutter installation cost?",
+                                "name": `How much does gutter installation cost in ${formattedCity}?`,
                                 "acceptedAnswer": {
                                     "@type": "Answer",
                                     "text": content.faqAnswers.cost
@@ -367,10 +461,42 @@ export default function ServicePage({ city, state, stateCode, zipCodes, relatedC
                             },
                             {
                                 "@type": "Question",
+                                "name": `What's the best gutter guard for ${stateCode.toUpperCase()} weather?`,
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": content.faqAnswers.bestGuard
+                                }
+                            },
+                            {
+                                "@type": "Question",
+                                "name": `Do you offer emergency gutter repair in ${formattedCity}?`,
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": content.faqAnswers.emergency
+                                }
+                            },
+                            {
+                                "@type": "Question",
+                                "name": `How often should gutters be cleaned in ${stateCode.toUpperCase()}?`,
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": content.faqAnswers.cleaningFrequency
+                                }
+                            },
+                            {
+                                "@type": "Question",
+                                "name": `Do you repair soffit and fascia near me in ${formattedCity}?`,
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": content.faqAnswers.soffitFascia
+                                }
+                            },
+                            {
+                                "@type": "Question",
                                 "name": "Do you offer warranties?",
                                 "acceptedAnswer": {
                                     "@type": "Answer",
-                                    "text": "Yes! We offer a lifetime warranty on materials and a comprehensive labor warranty on all installations."
+                                    "text": content.faqAnswers.warranty
                                 }
                             },
                             {
@@ -399,8 +525,12 @@ export default function ServicePage({ city, state, stateCode, zipCodes, relatedC
 
                     <div className="space-y-4">
                         {[
-                            { q: "How much does gutter installation cost?", a: content.faqAnswers.cost },
-                            { q: "Do you offer warranties?", a: "Yes! We offer a lifetime warranty on materials and a comprehensive labor warranty on all installations." },
+                            { q: `How much does gutter installation cost in ${formattedCity}?`, a: content.faqAnswers.cost },
+                            { q: `What's the best gutter guard for ${stateCode.toUpperCase()} weather?`, a: content.faqAnswers.bestGuard },
+                            { q: `Do you offer emergency gutter repair in ${formattedCity}?`, a: content.faqAnswers.emergency },
+                            { q: `How often should gutters be cleaned in ${stateCode.toUpperCase()}?`, a: content.faqAnswers.cleaningFrequency },
+                            { q: `Do you repair soffit and fascia near me in ${formattedCity}?`, a: content.faqAnswers.soffitFascia },
+                            { q: "Do you offer warranties?", a: content.faqAnswers.warranty },
                             { q: "Can you install gutters on any roof type?", a: "Absolutely. We have experience with asphalt shingles, metal roofs, slate, tile, and flat roofs." },
                             { q: "How quickly can you get the job done?", a: content.faqAnswers.timeline }
                         ].map((faq, i) => (
