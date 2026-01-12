@@ -21,6 +21,7 @@ export default function Footer() {
                             <li><Link href="/" className="hover:text-white transition-colors">Find Your City</Link></li>
                             <li><Link href="/#states" className="hover:text-white transition-colors">Browse States</Link></li>
                             <li><Link href="/" className="hover:text-white transition-colors">Get A Quote</Link></li>
+                            <li><Link href="/sitemap" className="hover:text-white transition-colors">Site Directory</Link></li>
                         </ul>
                     </div>
                     <div>
