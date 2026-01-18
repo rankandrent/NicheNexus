@@ -55,3 +55,8 @@ export const stateMetaPatterns: Record<string, string> = {
 }
 
 export const defaultMetaPattern = "Sump Pump Installation, Cleaning & Repair {0} Near Me"
+
+export function getMetaTitle(city: string, stateCode: string, stateName?: string): string {
+    const pattern = stateMetaPatterns[stateCode.toUpperCase()] || defaultMetaPattern
+    return pattern.replace('{0}', city).replace('{1}', stateName || stateCode)
+}
