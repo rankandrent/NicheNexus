@@ -11,6 +11,7 @@ import InternalLinks from '@/components/InternalLinks'
 import TrustBadges from '@/components/TrustBadges'
 import AuthoritySignals from '@/components/AuthoritySignals'
 import TopBusinesses from '@/components/TopBusinesses'
+import { servicesData } from '@/lib/services-data'
 
 interface ServicePageProps {
     city: string
@@ -217,15 +218,11 @@ export default function ServicePage({ city, state, stateCode, zipCodes, relatedC
             <section className="py-24 px-6 bg-white relative z-20">
                 <div className="max-w-7xl mx-auto">
                     <div className="grid md:grid-cols-3 gap-8 -mt-32">
-                        {[
-                            { title: "Seamless Gutters", desc: "Custom-fit aluminium gutters fabricated on-site to eliminate leaks and improve drainage.", icon: "🔧" },
-                            { title: "Gutter Guards", desc: "High-quality leaf protection systems to keep your gutters debris-free all year long.", icon: "🛡️" },
-                            { title: "Lifetime Warranty", desc: "We stand behind our materials and installation workmanship with a 100% satisfaction guarantee.", icon: "✅" }
-                        ].map((feature, i) => (
-                            <div key={i} className="bg-white p-8 rounded-2xl shadow-xl shadow-slate-200/50 border border-slate-100 hover:border-blue-100 transition-all hover:-translate-y-1">
-                                <div className="text-4xl mb-4">{feature.icon}</div>
-                                <h3 className="text-xl font-bold mb-3 text-slate-800">{feature.title}</h3>
-                                <p className="text-slate-600 leading-relaxed">{feature.desc}</p>
+                        {Object.values(servicesData).slice(0, 3).map((service, i) => (
+                            <div key={i} className="bg-white p-8 rounded-2xl shadow-xl shadow-slate-200/50 border border-slate-100 hover:border-blue-100 transition-all hover:-translate-y-1 group">
+                                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">{service.icon}</div>
+                                <h3 className="text-xl font-bold mb-3 text-slate-800">{service.title}</h3>
+                                <p className="text-slate-600 leading-relaxed line-clamp-2">{service.description(formattedCity, formattedState).split('.')[0]}.</p>
                             </div>
                         ))}
                     </div>
@@ -355,41 +352,20 @@ export default function ServicePage({ city, state, stateCode, zipCodes, relatedC
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-8">
-                        {[
-                            {
-                                title: "Seamless Gutter Installation",
-                                desc: "Custom-fit aluminum and copper gutters fabricated on-site to provide a perfect leak-free fit for your home.",
-                                bg: "bg-blue-50", text: "text-blue-600",
-                                icon: "🔧"
-                            },
-                            {
-                                title: "Gutter Guards & Protection",
-                                desc: "Keep leaves and debris out of your gutters with our premium micro-mesh guards and leaf protection systems.",
-                                bg: "bg-green-50", text: "text-green-600",
-                                icon: "🛡️"
-                            },
-                            {
-                                title: "Gutter Cleaning & Repair",
-                                desc: "Professional cleaning, sealing, and repair services to ensure your drainage system works perfectly.",
-                                bg: "bg-orange-50", text: "text-orange-600",
-                                icon: "🧹"
-                            },
-                            {
-                                title: "Downspout & Drainage",
-                                desc: "Expert installation of downspouts, extensions, and underground drainage to move water away from your foundation.",
-                                bg: "bg-purple-50", text: "text-purple-600",
-                                icon: "🚿"
-                            }
-                        ].map((service, i) => (
-                            <div key={i} className="flex gap-6 p-8 rounded-2xl bg-white border border-slate-100 hover:shadow-xl transition-shadow group">
-                                <div className={`w-16 h-16 rounded-xl ${service.bg} ${service.text} flex items-center justify-center text-3xl shrink-0 group-hover:scale-110 transition-transform`}>
+                        {Object.values(servicesData).slice(0, 4).map((service, i) => (
+                            <Link
+                                key={i}
+                                href={`/${stateCode.toLowerCase()}/${city}/${service.slug}`}
+                                className="flex gap-6 p-8 rounded-2xl bg-white border border-slate-100 hover:shadow-xl transition-shadow group cursor-pointer"
+                            >
+                                <div className={`w-16 h-16 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-3xl shrink-0 group-hover:scale-110 transition-transform`}>
                                     {service.icon}
                                 </div>
                                 <div>
-                                    <h3 className="text-xl font-bold text-slate-900 mb-3">{service.title}</h3>
-                                    <p className="text-slate-600 leading-relaxed">{service.desc}</p>
+                                    <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">{service.title}</h3>
+                                    <p className="text-slate-600 leading-relaxed line-clamp-3">{service.description(formattedCity, formattedState)}</p>
                                 </div>
-                            </div>
+                            </Link>
                         ))}
                     </div>
                 </div>

@@ -456,11 +456,11 @@ export default function ServiceSpecificPage({ city, state, stateCode, service, r
                     <div className="relative hidden lg:block">
                         <div className="relative w-full aspect-square max-w-lg mx-auto">
                             <div className="absolute inset-0 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-                            {/* Professional Gutter Installation Image */}
-                            <div className="relative z-10 w-full h-full rounded-2xl overflow-hidden">
+                            {/* Professional Dynamic Service Image */}
+                            <div className="relative z-10 w-full h-full rounded-2xl overflow-hidden shadow-2xl">
                                 <Image
-                                    src="https://i.ibb.co/Z6Wgrtzs/Premium-Gutter-Installation.png"
-                                    alt="Professional Gutter Installation & Repair"
+                                    src={service.heroImage}
+                                    alt={`${service.title} - Professional Service`}
                                     fill
                                     className="object-cover"
                                     priority
@@ -498,11 +498,11 @@ export default function ServiceSpecificPage({ city, state, stateCode, service, r
                     </h2>
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                         {service.features.map((feature, i) => (
-                            <div key={i} className="p-6 bg-white rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
-                                <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 text-2xl mb-4">
-                                    {['🔧', '⚡', '📐', '✨'][i % 4]}
+                            <div key={i} className="p-6 bg-white rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow group">
+                                <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 text-2xl mb-4 group-hover:scale-110 transition-transform">
+                                    {service.icon}
                                 </div>
-                                <p className="text-slate-700 font-medium">{feature}</p>
+                                <p className="text-slate-700 font-medium leading-relaxed">{feature}</p>
                             </div>
                         ))}
                     </div>
@@ -555,12 +555,12 @@ export default function ServiceSpecificPage({ city, state, stateCode, service, r
                     </h2>
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                         {service.benefits.map((benefit, i) => (
-                            <div key={i} className="p-6 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl border border-blue-100">
-                                <div className="text-3xl mb-3">
-                                    {['✓', '⭐', '🎯', '💎'][i % 4]}
+                            <div key={i} className="p-8 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl border border-blue-100 shadow-sm hover:shadow-md transition-all">
+                                <div className="text-3xl mb-4">
+                                    {['✅', '⭐', '🏆', '💎'][i % 4]}
                                 </div>
-                                <h3 className="text-lg font-bold text-slate-900 mb-2">{benefit}</h3>
-                                <p className="text-sm text-slate-600">Expert {service.title.toLowerCase()} in {formattedCity} delivers this benefit.</p>
+                                <h3 className="text-lg font-bold text-slate-900 mb-3 leading-tight">{benefit}</h3>
+                                <p className="text-sm text-slate-600 leading-relaxed">Expert {service.title.toLowerCase()} delivers this lasting value.</p>
                             </div>
                         ))}
                     </div>
