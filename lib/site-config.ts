@@ -102,7 +102,7 @@ export const getSiteConfig = async (): Promise<SiteConfig> => {
             .single()
 
         if (data && !error) {
-            return mapConfigData(data)
+            return mapConfigData(data, host)
         }
     }
 
@@ -115,7 +115,7 @@ export const getSiteConfig = async (): Promise<SiteConfig> => {
             .single()
 
         if (data && !error) {
-            return mapConfigData(data)
+            return mapConfigData(data, host)
         }
     } catch (e) {
         console.warn('DB Config Fetch Failed, falling back to ENV', e)
@@ -123,7 +123,7 @@ export const getSiteConfig = async (): Promise<SiteConfig> => {
 
     // 3. Last Resort: Environment Variables
     return {
-        domain: process.env.NEXT_PUBLIC_SITE_DOMAIN || "localhost",
+        domain: host || process.env.NEXT_PUBLIC_SITE_DOMAIN || "localhost",
         nicheSlug: (process.env.NEXT_PUBLIC_NICHE_SLUG || "gutter").toLowerCase(),
         siteName: process.env.NEXT_PUBLIC_SITE_NAME || "Professional Services",
         contactPhone: process.env.NEXT_PUBLIC_CONTACT_PHONE || "(555) 000-0000",
@@ -136,9 +136,15 @@ export const getSiteConfig = async (): Promise<SiteConfig> => {
 };
 
 // Helper to map DB response to SiteConfig interface
-function mapConfigData(data: any): SiteConfig {
+function mapConfigData(data: any, actualHost?: string): SiteConfig {
+    // If we are on a different host than what's in the DB (e.g. test URL or localhost fallback)
+    // we prefer the actual host for Canonical/Sitemaps to work correctly.
+    const domain = (actualHost && (data.domain === 'localhost' || !data.domain))
+        ? actualHost
+        : data.domain;
+
     return {
-        domain: data.domain,
+        domain: domain,
         nicheSlug: data.niche_slug,
         siteName: data.site_name,
         contactPhone: data.contact_phone,
